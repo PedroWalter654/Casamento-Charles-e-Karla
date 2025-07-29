@@ -1,0 +1,825 @@
+/* Adicione isto na PRIMEIRA LINHA do Style.css */
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
+}
+
+
+/* Garante que imagens, divs e outros não ultrapassem a tela */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Layout geral ajustável */
+.container, .section, .box, .imagem, .card {
+  width: 100%;
+  padding: 15px;
+}
+
+/* Imagens redimensionáveis */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tipografia adaptável */
+h1, h2, p{
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Ajustes específicos para telas menores */
+@media (max-width: 300px) {
+  h1 {
+    font-size: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .botao, .confirmar, .link, .presentes {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .section {
+    padding: 20px 10px;
+  }
+
+  .imagem-lateral, .imagem-flutuante {
+    position: static;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+header{
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+/* ---------- Mapas ---------- */
+.mapas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.mapa-bloco {
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.mapa-bloco iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* sombra no mapa */
+}
+
+/* ---------- Galeria ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.galeria img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+#cabine {
+  margin: 3 25px;
+}
+
+/* ---------- Formulários ---------- */
+form input, form textarea, form button {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Estilo para a seção Dicas - combinando com o contador */
+#dicas {
+  background: linear-gradient(135deg, #0e2fb0, #157291); /* Mesmo gradiente do contador */
+  color: white;
+  padding: 1.0rem;
+  border-radius: 12px;
+  margin: 1.0rem auto;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho sutil */
+#dicas::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
+
+#dicas h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#dicas h3 {
+  color: white;
+  text-align: center;
+}
+
+.cores-proibidas {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.cores-proibidas li {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cores-proibidas li:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.cores-proibidas li strong {
+  color: #d22222; /* Amarelo para destaque */
+}
+
+/* Divisor estilizado */
+#dicas .divisor {
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+  margin: 2rem auto;
+  width: 60%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #dicas {
+    padding: 1.5rem;
+    margin: 1.5rem 1rem;
+  }
+
+  #dicas h2 {
+    font-size: 1.6rem;
+  }
+
+  #dicas h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .cores-proibidas {
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .cores-proibidas li {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #dicas .divisor {
+    width: 90%;
+    margin: 1.5rem auto;
+    padding: 10px;
+  }
+}
+
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px; /* espaçamento entre blocos */
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: white;
+  min-width: 40px;
+}
+
+/* --- Contador Regressivo --- */
+#contador {
+  background: linear-gradient(135deg, #0e2fb0, #157291);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 0.8rem auto;
+  text-align: center;
+  box-shadow: 0 8px 14px rgba(255, 255, 255, 0.3);
+  flex-wrap: wrap;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.timer-box {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.8rem;
+  min-width: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.timer-box span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.timer-box p {
+  margin: 10px;
+  font-size: 0.8rem;
+}
+
+/* Responsivo */
+@media (max-width: 300px) {
+  .timer-box {
+    min-width: 50px;
+    padding: 0.8rem;
+  }
+  .timer-box span {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===================== FLORES LATERAIS ===================== */
+.flores-esquerda,
+.flores-direita {
+  position: fixed;
+  top: 40px;
+  height: 100vh;
+  width: auto;
+  max-width: 180px;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+  border: none !important;
+}
+
+/* Animação da flor esquerda */
+.flores-esquerda {
+  left: 0;
+  transform: translateX(-10%) rotate(5deg);
+  animation: balanco-esquerda 8s ease-in-out infinite;
+}
+
+/* Animação da flor direita */
+.flores-direita {
+  right: 0;
+  transform: translateX(10%) rotate(-5deg) scaleX(-1);
+  animation: balanco-direita 10s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes balanco-esquerda {
+  0%, 100% { transform: translateX(-10%) rotate(5deg); }
+  50% { transform: translateX(-5%) rotate(3deg); }
+}
+
+@keyframes balanco-direita {
+  0%, 100% { transform: translateX(10%) rotate(-5deg) scaleX(-1); }
+  50% { transform: translateX(5%) rotate(-3deg) scaleX(-1); }
+}
+
+/* ===================== FLORES NOS CANTOS ===================== */
+.flor-canto {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.flor-superior-esquerda {
+  top: 20px;
+  left: 0;
+  background-image: url('flor-canto-se.png');
+}
+
+.flor-superior-direita {
+  top: 20px;
+  right: 0;
+  background-image: url('flor-canto-sd.png');
+  transform: rotate(90deg);
+}
+
+.flor-inferior-esquerda {
+  bottom: 0;
+  left: 0;
+  background-image: url('flor-canto-ie.png');
+  transform: rotate(270deg);
+}
+
+.flor-inferior-direita {
+  bottom: 0;
+  right: 0;
+  background-image: url('flor-canto-id.png');
+  transform: rotate(180deg);
+}
+
+/* Responsivo para telas muito pequenas */
+@media (max-width: 300px) {
+  .flor-canto {
+    width: 80px;
+    height: 80px;
+    opacity: 0.5;
+  }
+}
+
+/* ===================== FLORES NO CABEÇALHO ===================== */
+.flores-cabecalho {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flor-header {
+  position: absolute;
+  top: 0;
+  height: 150px;
+  width: auto;
+  opacity: 0.8;
+}
+
+.flor-esquerda {
+  left: 4px;
+}
+
+.flor-direita {
+  right: 4px;
+}
+
+/* Cabeçalho */
+header {
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+/* Responsivo para header */
+@media (max-width: 768px) {
+  .flor-header {
+    height: 100px;
+    opacity: 0.7;
+  }
+  header {
+    padding-top: 60px;
+  }
+}
+
+/* ESTILOS PARA PADRINHOS */
+.container-padrinhos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.horario-padrinhos {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.padrinhos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card-padrinho {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card-padrinho h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.detalhes-vestuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-vestuario {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+}
+
+.descricao {
+  text-align: center;
+}
+
+.descricao p {
+  margin: 0.5rem 0;
+  color: #555;
+  text-align: center;
+}
+
+/* Bordas temáticas */
+.card-padrinho:nth-child(1) {
+  border-top: 4px solid #a0a0a0; /* Cinza para padrinhos */
+}
+
+.card-padrinho:nth-child(2) {
+  border-top: 4px solid #92c1e2; /* Azul para madrinhas */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .padrinhos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-padrinho {
+    max-width: 100%;
+  }
+  
+  .img-vestuario {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.card-padrinho h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.card-padrinho h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, #92c1e2, #a0a0a0);
+}
+
+/* Ajuste ALTURA do cabeçalho - versão segura */
+header {
+  padding-top: 20px !important;    /* Altura topo (era ~20px) */
+  padding-bottom: 15px !important; /* Altura base (era ~20px) */
+}
+
+header h1 {
+  margin: 4px 0 !important;        /* Reduz espaçamento do título */
+  font-family: 'Lobster', cursive;
+}
+
+nav {
+  padding: 26px 0 !important;       /* Reduz altura do menu */
+}
+
+.qr-code-frame {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* Chave PIX */
+.chave-box {
+  background: #f5f5f5;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  word-break: break-all;
+}
+
+.chave-box button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.chave-box button:hover {
+  background: #388e3c;
+}
+
+/* Alinha APENAS esses textos */
+.textos-alinhados {
+  text-align: center; /* ou 'left'/'right' conforme preferir */
+  max-width: 600px;
+  margin: 0 auto; /* centraliza na página */
+  line-height: 1.6;
+}
+
+.textos-alinhados p {
+  margin: 0.5rem 0; /* espaçamento entre os parágrafos */
+  font-size: 1.1rem;
+  color: #333; /* cor personalizável */
+}
+
+.imagem-cafe {
+  max-height: 100px; /* Ajuste este valor */
+  width: auto;
+  display: block;
+  margin: 5px auto; /* Espaçamento reduzido */
+  object-fit: contain !important;
+}
+
+/* Ajuste ESPECÍFICO para a imagem do café */
+.textos-alinhados img[src="Café2.png"] {
+  max-height: 280px !important;      /* Reduz a altura */
+  width: auto !important;           /* Mantém proporção */
+  margin: 0 auto !important;        /* Centraliza */
+  display: block !important;        /* Remove espaços fantasmas */
+  padding: 0 !important;            /* Remove espaçamento interno */
+  object-fit: contain !important;   /* Garante que a imagem não distorça */
+}
+
+/* Centraliza APENAS a área de senha e confirmação */
+#acessoPadrinhos, 
+#confirmar-presenca {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto !important; /* Centraliza horizontalmente */
+  padding: 1rem;
+}
+
+/* Ajuste para os inputs/botões */
+#inputSenhaPadrinhos,
+#form-presenca input,
+#form-presenca button {
+  display: block;
+  margin: 10px auto !important; /* Centraliza elementos */
+  width: 80%; /* Largura controlada */
+}
+
+#admin-area:hover {
+  background: rgba(0,0,0,0.05) !important; /* Feedback visual sutil */
+}
+
+#lista-popup {
+  font-family: Arial, sans-serif;
+}
+
+#lista-popup h3 {
+  color: #8B4513; /* Cor temática */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+#lista-conteudo p {
+  margin: 10px 0;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Tente algo mais específico: */
+body .historia {
+  font-family: 'Courier New' !important;
+}
+
+/* Substitua o atual #presentes img por isso: */
+#presentes img {
+  width: auto;
+  height: auto;
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border: 2px solid #153b8b;
+  border-radius: 10px;
+  padding: 8px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10 10px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Adicione esta nova classe para os itens individuais */
+.presente-item {
+  margin-bottom: 10 10px;
+  padding: 6px;
+  background-color: #fff9f9; /* Fundo levemente rosado */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1); /* Sombra sutil vermelha */
+  text-align: center;
+  max-width: 600px; /* aumenta as laterais */
+  width: 100%;
+  margin: 6px auto;
+}
+
+#presentes img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Container para cada item de presente */
+.presente-item {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Preço dos presentes */
+#presentes.textos-alinhados p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 12px 2;
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mapa-bloco {
+        max-width: 100%;
+    }
+    
+    .timer-box {
+        min-width: 50px;
+        padding: 16px 10px;
+    }
+}
+
+button, input[type="submit"] {
+    transition: all 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Import da fonte de assinatura */
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+.Lavishly-Yours {
+  font-family: 'Lavishly Yours', cursive;
+  font-size: 32px; /* você pode ajustar o tamanho aqui */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Fonte parecida com Monotype Corsiva */
+.titulo-casamento {
+  font-family: 'Labster', cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+}
+
+.p{
+  font-family: 'Libertinus Math', sans-serif;
+  font-size: 2em;
+}
+
+.observacao {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.qrcode-img {
+  width: 200px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto 10px auto;
+  max-width: 100%;
+}
